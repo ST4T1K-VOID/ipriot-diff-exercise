@@ -48,28 +48,27 @@ This is a repo to help you practice diffing!
 ```
 
 Fill in what each of the elements of the diff mean (if you are not sure just guess!):
+**①**:
+> '---' a key that signals that lines from the first file in the comparison is represented with '-'.
 
-
-**①** 
-Shows this is a diff in git format. It is followed by the file names being compared. The `a/` and `b/` 'folders' are like virtual folders that usually represent different versions with the newer version being b/ and the older version being a/.
-
-**②**
-Shows the first and second commit hashes. These are used to identify the commits that are being compared. This is useful for git to know which commit to apply the diff to. The number on the end is the file mode, and, well, you don't need to worry about that (except if you get a different number, then you should worry).
+**②**:
+> '+++' a key that signals that lines from the second file in the comparison is represented with '+'.
 
 **③**:
-The symbol associated with each file. Indicates which file is doing the inserting. Note: if the files have a temporal relationship, then an insertion in the past (exists in the past but not in the present) indicates deletion in the present. But notice that files don't have to have a temporal relationship in which case you must remember to treat the symbols as just saying who originated the change.
+> '@@' signals that this line is a 'hunk' which tells you how many lines from the files are being shown (i.e. -1,8 (lines 1 through 8) +1,12 (lines 1 through 12)).
 
-**④**
-This is a section header. It tells the line number from each file that is being compared (the plus and minus are the originator indicator not negative and positive numbers!!!)
+**④**:
+> '-' a line/difference from the first file
 
 **⑤**:
-The words "fork this repo" I hope you have a better answer than me!
+> '+' a line/difference from the second file
 
 **⑥**:
-In this example, one line is replaced and 3 additional lines are added in the new version
+> 'diff <file 1> <file 2>' shows the two files being compared in the diff
 
 **⑦**:
-In this case there is a common whitespace in both files bollowed by a change in one line (notice that only one word changed, but the diff does not indicate this). Notice also that this is redundant given the next line!
+> 'index' shows the hash codes for the commits of the two files.
+
 
 Notice that the diff above only showed different **lines** in the file. Including whitespaces. We can also highlight changes at the word level with the --word-diff option:
 
